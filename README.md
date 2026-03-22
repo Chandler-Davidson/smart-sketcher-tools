@@ -39,7 +39,7 @@ The required Python packages can be seen in the usual `requirements.txt` file:
 asyncclick
 anyio
 progress
-pil
+pillow
 bleak
 ```
 
