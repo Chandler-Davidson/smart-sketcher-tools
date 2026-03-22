@@ -72,7 +72,7 @@ async def sendimage(ctx,filename):
         await client.start_notify(ble_char_uuid, ble_notify_callback)
 
         # "Send Image" command 
-        data = [0x01,0x00,0x00,0x00,0x50,0x00,0x01,0x00]
+        data = bytes([0x01,0x00,0x00,0x00,0x50,0x00,0x01,0x00])
         await client.write_gatt_char(char_specifier=ble_char_uuid,data=data)
         send_lines = 0
         x = 0
