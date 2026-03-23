@@ -3,3 +3,7 @@ anyio
 progress
 pillow
 bleak
+fastapi
+uvicorn
+httpx
+python-multipart

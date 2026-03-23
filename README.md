@@ -21,6 +21,54 @@ _Note: Not actually running Wolf on the projector, but something interactive is 
 
 `sketcher.py` is small python tool, that can transfer images in most formats directly from your PC to the projector.
 
+## Web app (easy mode)
+
+There is now a local web app for quick sending from either:
+
+- an image URL (paste link)
+- a local image file upload
+
+The web app keeps image sending simple and handles image fitting for the projector automatically.
+
+### Start web app
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Run server on your home network:
+
+```bash
+python webapp.py
+```
+
+Open:
+
+```text
+http://localhost:8000
+```
+
+From another device on the same network, open:
+
+```text
+http://<YOUR_PC_IP>:8000
+```
+
+### Web app flow
+
+1. Paste an image link or choose upload.
+2. Optionally provide Bluetooth address. If empty, app auto-discovers `smART_sketcher2.0`.
+3. Click **Send to Projector**.
+4. Watch live progress until all 128 lines are sent.
+
+### Notes
+
+- Uploaded/linked image is converted to projector format (160x128 RGB565).
+- Default fit mode preserves aspect ratio and pads remaining area.
+- Only one transfer runs at a time.
+
 **Usage:**
 
 `python3 sketcher.py sendimage dog.jpg`
